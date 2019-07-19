@@ -5,7 +5,7 @@ const path = require('path');
 describe('Bubble', () => {
     
 
-    it('Lop-lop-lop', () => {
+    xit('Lop-lop-lop', () => {
         browser.url('https://task1-bvckdxdkxw.now.sh/');
         browser.maximizeWindow();
         browser.pause(5000);
@@ -23,12 +23,17 @@ describe('Bubble', () => {
         it('Lop-lop-lop-bonus', () => {
         browser.url('https://task1-bvckdxdkxw.now.sh/');
         browser.maximizeWindow();
-       
+        const expect = $("div#score");
+
+        score = 0;
         for (; ; ) {
-            $("div.bubble").waitForDisplayed(1000);
+            
+            $("div.bubble").waitForDisplayed(3000);
             const bubble = $("div.bubble");
                    bubble.click();
+                   score += 1;
+                   assert.equal(expect.getText(), score);
         }
-
+        
     });
 });
