@@ -2,10 +2,10 @@ const assert = require('assert');
 const {url} = require('url');
 const path = require('path');
 
-describe('Bubble', () => {
+describe('Pop Bubble Game', () => {
     
 
-    xit('Lop-lop-lop', () => {
+    it('Lop-lop-lop', () => {
         browser.url('https://task1-bvckdxdkxw.now.sh/');
         browser.maximizeWindow();
         browser.pause(5000);
@@ -28,7 +28,7 @@ describe('Bubble', () => {
         score = 0;
         for (; ; ) {
             
-            $("div.bubble").waitForDisplayed(3000);
+            $("div.bubble").waitForDisplayed(2000);
             const bubble = $("div.bubble");
                    bubble.click();
                    score += 1;
